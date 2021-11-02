@@ -30,7 +30,26 @@ int add(int a, int b) {
 
   - 함수와 동일 하다 볼 수 있으나, 선언된 위치에 따라 함수와 메소드를 나눌수 있다.
   - 메소드는 Class내에 선언되어 있는 함수를 메소드라고 부른다.
-    
+
+메소드의 정의 방법
+```java
+public Class MethodEx {
+  
+  public static int add(int a, int b) {
+    int result;
+    result = a + b;
+    return result;
+  }
+  
+  public static void main(String[] args) {
+    ...
+  }
+}
+```
+
+메소드 또한 함수와 마찬가지로 구성되어 있으며, 선언 위치만 Class내부에 선언되어 있다는 차이점이 있다.
+
+`JAVA언어는 Class 단위로 구성되어 있기 떄문에 JAVA에서의 함수는 전부 메소드라 볼 수 있다.`
 
 ## 파일 읽기 기초
 ## Call By Value와 Call By Reference
