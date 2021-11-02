@@ -227,14 +227,14 @@ public class ScannerEx {
 
 -----
 
-hello world를 입력 했을 떄 next()의 결과
+hello world를 입력 했을 때 next()의 결과
 
 ```
 hello world
 scan = hello
 ```
 
-hello world를 입력 했을 떄 nextLine()의 결과
+hello world를 입력 했을 때 nextLine()의 결과
 
 ```
 hello world
