@@ -24,9 +24,11 @@
 ```
 시간을 구하는 메소드 안에서 시(hour)와 분(min)을 구하려 했더니 중첩 if문을 사용하면서 보기 안 좋은거 같아
 
+둘을 나눠서 구현하는게 더 깔끔할거 같아서 새로 작성을 해보았다.
+
 ----------
 
-둘을 나눠서 구현하는게 더 깔끔할거 같아서 새로 작성을 해보았다.
+시(hour)와 분(min)을 구하는 메소드를 각각 구현한 후 출력하도록 변경해 보았다.
 
 ```java
   static void calculateForTime(int hour, int min) {
@@ -53,14 +55,91 @@
       return ONE_HOUR - Math.abs(m);
   }
 ```
-우선 시(hour)와 분(min)을 구하는 메소드를 각각 구현한 후 출력하도록 변경해 보았다.
 
 ## 반복문
 **for반복문**
 
-  - 어제 작성한 for문을 활용하여 return과 break의 차이점을 알아보자
+  - 어제 작성한 for문을 활용하여 return, break, contiue의 차이점을 알아보자
 
+```java
+  static void gugudan(int start, int end) {
+      for (int i=start;i<=end;i++) {
+          for (int j=1;j<=9;j++ ) {
+              if (j == 2) {
+                  break; // return, contiue
+              }
+              System.out.println(i + "*" + j + "=" + i * j);
+          }
+          System.out.println("------------------");
+      }
+  }
+```
+
+if 조건문 안에 break와 return을 넣어보고 결과를 확인해 보자.
+
+  - break의 결과 안쪽 for문에서 빠져나와 바깥쪽 for문의 조건식(i <= end)으로 이동 후 반복문이 계속 진행된다.
+  ```
+  1*1=1
+  ------------------
+  2*1=2
+  ------------------
+  3*1=3
+  ------------------
+  ```
+  - return의 결과 이중 for문 전체가 종료 되고 결과값이 출력된다.
+  ```
+  1*1=1
+  ```
+  - contiue의 결과 j값이 2가 될 경우만 안쪽 for문의 진행을 멈추고 j값이 증감식에 의해 변경될 경우 계속 진행된다.
+  ```
+  1*1=1
+  1*3=3
+  1*4=4
+  1*5=5
+  1*6=6
+  1*7=7
+  1*8=8
+  1*9=9
+  ------------------
+  ...
+  ```
 **while반복문**
+
+  - while문을 숙지 하기
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class WhileLoopEx {
+    public static void main(String[] args) throws IOException {
+        BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+
+        int firstNumber = Integer.parseInt(buf.readLine());
+        System.out.println(cycle(firstNumber));
+    }
+
+    private static int cycle(int number) {
+        int cycleCount = 0;
+        int temp = number;
+
+        while (true) {
+            cycleCount++;
+            int value = separationOfNumbers(number);
+            if (temp == value) {
+                return cycleCount;
+            }
+            number = value;
+        }
+    }
+
+    private static int separationOfNumbers(int n) {
+        int value = (n / 10) + (n % 10);
+        return (n % 10 * 10) + (value % 10);
+    }
+}
+```
 
 ## 함수와 메서드
 
