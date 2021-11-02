@@ -1,6 +1,67 @@
 # 2일차 학습일지
 ## 조건문
+
+**조건문**
+
+어제 작성한 조건문(알람시계)을 좀 더 보기 좋게 작성해 보자
+```java
+  static void calculateForTime(int hour, int min) {
+      int resultHour = 0;
+      int resultMin = 0;
+
+      resultMin = min - MINUS_MIN;
+
+      if (resultMin < 0) {
+          hour--;
+          if (hour < 0) {
+              hour = 23;
+          }
+          resultMin = ONE_HOUR - Math.abs(resultMin);
+      }
+      resultHour = hour;
+      System.out.println(resultHour + " " + resultMin);
+  }
+```
+시간을 구하는 메소드 안에서 시(hour)와 분(min)을 구하려 했더니 중첩 if문을 사용하면서 보기 안 좋은거 같아
+
+----------
+
+둘을 나눠서 구현하는게 더 깔끔할거 같아서 새로 작성을 해보았다.
+
+```java
+  static void calculateForTime(int hour, int min) {
+      min = min - MINUS_MIN;
+
+      if (min < 0) {
+          min = calculateForMin(min);
+          hour = calculateForHour(hour);
+      }
+      System.out.println(hour + " " + min);
+  }
+
+  static int calculateForHour(int h) {
+      h--;
+
+      if (h < 0) {
+          return 23;
+      }
+      return h;
+  }
+
+  static int calculateForMin(int m) {
+
+      return ONE_HOUR - Math.abs(m);
+  }
+```
+우선 시(hour)와 분(min)을 구하는 메소드를 각각 구현한 후 출력하도록 변경해 보았다.
+
 ## 반복문
+**for반복문**
+
+  - 어제 작성한 for문을 활용하여 return과 break의 차이점을 알아보자
+
+**while반복문**
+
 ## 함수와 메서드
 
 **함수**는 무엇일까?
