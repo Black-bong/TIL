@@ -240,6 +240,4 @@ hello world를 입력 했을 때 nextLine()의 결과
 hello world
 scan = hello world
 ```
-scan = hello world
-
 ## Call By Value와 Call By Reference
