@@ -192,4 +192,54 @@ public Class MethodEx {
 `JAVA언어는 Class 단위로 구성되어 있기 떄문에 JAVA에서의 함수는 전부 메소드라 볼 수 있다.`
 
 ## 파일 읽기 기초
+
+**Scanner와 BufferdReader()의 차이**
+
+Scanner란?
+  - java.util 패키지 안에 존재하는 클래스이다.
+  - 기본적인 데이터 타입들을 Scanner의 메소드를 사용하여 입력받을 수 있다.
+  - Scanner scan = new Scanner(System.in) 객체 선언을 통해 사용할 수 있다.
+  
+  `System.in은 자바 표준입력 스트림이다. 추후 공부해야 할 내용중 하나이다.`
+  
+  - Scanner의 주요 메소드로는 next(), nextLine(), next+자료형()`int, Short등등`이 있으며 리턴하고자 하는 자료형에 따라 사용하면 된다.
+  - 추가적으로 Scanner 사용 후 close()를 통해 사용 종료를 해주는 것이 좋으며, boolean hasNext()도 있는데 입력값이 들어 올때까지 대기하다 입력값이 들어오면 true를 반환한다.
+  - 추가적으로 next()와 nextLine()은 주로 문자열을 nextLine()은 콘솔 창에서 입력을 받을때 한 줄에 있으면 모두 문자열로 인식하여 리턴하지만 next()의 경우 개행 문자가 발생 되는 시점 까지만 리턴해준다.
+
+Scanner의 정의
+```java
+import java.util.Scanner;
+
+public class ScannerEx {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String scan = scanner.next();
+        scanner.close();
+        
+        System.out.println("scan = " + scan);
+    }
+}
+```
+  - java.util패키지 안에 있는 Scanner클래스를 import한다.
+  - 객체를 생성한다.
+  - 입력값을 받은 후 종료한다.
+
+-----
+
+hello world를 입력 했을 떄 next()의 결과
+
+```
+hello world
+scan = hello
+```
+
+hello world를 입력 했을 떄 nextLine()의 결과
+
+```
+hello world
+scan = hello world
+```
+scan = hello world
+
 ## Call By Value와 Call By Reference
