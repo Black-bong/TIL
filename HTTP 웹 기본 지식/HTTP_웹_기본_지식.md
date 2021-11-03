@@ -7,7 +7,7 @@
 
 ### IP 프로토콜
   - IP 프로토콜의 특징
-    - 지정 IP Addressdp 데이터 전달
+    - 지정 IP Address에 데이터 전달
     - Packet 이라는 통신 단위로 전달
     - 출발 IP Address와 도착 IP Address 필요
   
