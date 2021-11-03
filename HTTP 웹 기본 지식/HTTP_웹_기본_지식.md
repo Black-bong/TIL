@@ -52,7 +52,7 @@
     - URL: 리소스가 있는 위치를 지정
     - URN: 리소스에 이름을 부여
   - URL 전체 문법
-    - schema://[userinfo@]host[:prot][/path][?query][#fagment]
+    - schema://[userinfo@]host[:port][/path][?query][#fagment]
     - `https://www.google.com:433/search?q=hello&hi=ko`
   - URL Schema
     - 주로 프로토콜 사용
