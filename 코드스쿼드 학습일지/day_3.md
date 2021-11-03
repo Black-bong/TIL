@@ -11,6 +11,8 @@
 
 처음 문제를 보고 딱 두 문제는 할만 하겠다 생각했는데 딱 그 두 문제 밖에 풀지 못했다.......ㅠㅠ
 
+-----------
+
 ### 미션01
   - 지정한 수 만큼 이름 출력
   - https://github.com/Black-bong/CodeSquad_COCOA_JAVA/tree/master/week1/src/mission/indian 코드는 여기에!
