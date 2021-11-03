@@ -240,4 +240,48 @@ hello world를 입력 했을 때 nextLine()의 결과
 hello world
 scan = hello world
 ```
+
+BufferdReader()란?
+
+  - 자바의 java.io패키지 안에 존재하는 문자 단위 입력을 위한 스트림 클래스의 종류 중 하나다.
+  - 문자 단위 입력을 위한 최상위 클래스 Reader클래스를 상속 받고 있다.
+  - 문자 단위 입력을 받기 위한 보조 스트림이다.
+
+입출력 스트림이란?
+  
+  - 자바에서 모든 입출력(I/O)는 스트림을 통해 이루어진다.
+  - 데이터를 운반하는 연결통로라고 생각하면 된다.
+  - 스트림은 단방향 통신만 가능하기 때문에 하나의 스트림으로 동시에 입출력을 처리하는것은 불가능하다.
+  - 큐와 같은 FIFO(First In First Out) 구조로 되어있다.
+  - 자바에는 다양한 입출력 스트림이 존재하며, 바이트 단위와 문자 단위로 나눠져 있다.
+  - 문자/바이트 단위로 스트림의 종류를 나누고 그 안에서 데이터를 직접읽는 기반스트림과 기반스트림의 기능을 강화해주는 보조 스트림으로 나눠진다.
+
+`자바 입출력 스트림에 대해서는 나중에 좀 더 알아보고 우선 여기서는 BufferdReader에 대해서 알아보자`
+
+BufferdReader의 정의
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class BufferedReaderEx {
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader buf = new BufferedReader(new InputStreamReader(System.in)); 
+        // System.in으로 입력 받을때 아무런 값이 안들어오면 오류가 발생하기 때문에 예외 처리를 필수적으로 해줘야한다.
+
+        String readLineEx = buf.readLine();
+
+        buf.close();
+
+        System.out.println("readLineEx = " + readLineEx);
+    }
+}
+```
+  - java.io패키지 안에 있는 BufferedReader와 InPutStreamReader 그리고 IOException을 import해줘야 한다.
+  - 맨 처음 System.io에서 입력 받은 바이트 단위의 데이터를 InputStreamReader를 통해 문자로 읽을 수 있도록 만들 후 BufferdReader로 한 문장으로 읽을 수 있도록 만들면 된다.
+  - BufferedReader에는 read()와 readLine() 이라는 메소드가 있다.
+  - Scanner와 마찬가지로 입력을 받은 후 close를 이용해 종료를 해줘야 한다.
+
 ## Call By Value와 Call By Reference
