@@ -71,14 +71,38 @@
    - 메소드 호출 시 스택이 생성된다.
 
 ## 재귀 함수
-   - 재귀 함수란 어떤 함수에서 자신을 다시 호출하여 작업을 수행하는 방식의 함수를 의미한다.
+
+### 재귀 함수란?
+   - 어떤 함수에서 자신을 다시 호출하여 작업을 수행하는 방식의 함수를 의미한다.
+
+### 재귀함수 예제
+```java
+public class RecursionFunctionEx {
+    public static void main(String[] args) {
+        int n = 5;
+        System.out.println("1부터 " + n + "까지의 합계: " + add(n));
+    }
+
+    private static int add(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return n += add(n - 1);
+    }
+}
+```
+```
+1부터 5까지의 합계: 15
+```
 
 ## 클래스와 객체
 
 
 ## 자료구조의 기초
 
+### java언어에서 가장 많이 사용하는 자료구조는?
+   - List
 ----------
 
 # Reference
-https://deveric.tistory.com/92 call by reference
+- https://deveric.tistory.com/92 call by reference
