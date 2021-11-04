@@ -283,5 +283,3 @@ public class BufferedReaderEx {
   - 맨 처음 System.io에서 입력 받은 바이트 단위의 데이터를 InputStreamReader를 통해 문자로 읽을 수 있도록 만들 후 BufferdReader로 한 문장으로 읽을 수 있도록 만들면 된다.
   - BufferedReader에는 read()와 readLine() 이라는 메소드가 있다.
   - Scanner와 마찬가지로 입력을 받은 후 close를 이용해 종료를 해줘야 한다.
-
-## Call By Value와 Call By Reference
