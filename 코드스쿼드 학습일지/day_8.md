@@ -25,9 +25,30 @@
           MoneyBookData data = new MoneyBookData(date, briefs, income, expenses, consumptionType); // 객체 생성
           ```
   
-  - 검색 기능을 구현한다. 적요, 날짜, 금액, 수입, 지출, 소비 유형별로 검색을 하고 결과를 표시할 수 있어야 한다.
+  - 검색 기능을 구현한다. 
+  - 적요, 날짜, 금액, 수입, 지출, 소비 유형별로 검색을 하고 결과를 표시할 수 있어야 한다.
        - 검색 기능 구현 완료.
-       - 좀 더 보기 좋게 만들어 보고 싶은데 너무 욕심인가?
+       - 이런 반복적인 코드들을 좀 더 보기 좋게 만들어 보고 싶은데 너무 욕심인가?
+          ```java
+          public boolean isSameDate(String d) {
+              return this.date.substring(0, 3).equals(d);
+          }
+          public boolean isSameBriefs(String b) {
+              return this.briefs.equals(b);
+          }
+          public boolean isSameEarnings(String ea) {
+              return this.earnings.equals(ea);
+          }
+          public boolean isSameExpenses(String ex) {
+              return this.expenses.equals(ex);
+          }
+          public boolean isSameConsumptionType(String c) {
+              return this.consumptionType.equals(c);
+          }
+          public boolean isSameBalance(String bl) {
+              return this.balance.equals(bl);
+          }
+          ```
   
   - 정렬해서 보여주기 기능을 추가한다. 날짜 또는 금액의 오름차순 또는 내림차순으로 정렬해서 화면에 출력할 수 있어야 한다.
        - 아직 이건 시작하지 못했다, 주말에 해야할게 너무나도 많당.
