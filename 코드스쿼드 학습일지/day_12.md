@@ -118,5 +118,3 @@
 ### Map이란?
   - hashMap과 hashTable의 차이점은?
   - entrySet과 keySet의 차이점은?
-
-### 프로세스와 쓰레드에 대해 가볍게 공부해보기.
