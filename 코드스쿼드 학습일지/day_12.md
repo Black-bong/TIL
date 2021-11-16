@@ -55,8 +55,40 @@
   3. STORAGE
 
 ### 래퍼클래스란?
-### 리터널이란?
+  - 기본형 값을 감싸는 클래스
+  - 8개의 기본형을 객체로 다뤄야할 때 사용하는 클래스
+    |기본형|래퍼 클래스|
+    |----|-----|
+    |byte|Byte|
+    |short|Short|
+    |int|Integer|
+    |long|Long|
+    |float|Float|
+    |double|Double|
+    |char|Charater|
+    |boolean|Boolean|
 ### 오토박싱 언박싱?
+   - 기본 타입의 데이터를 래퍼 클래스의 인스턴스로 변환하는 과정을 박싱(Boxing)
+   - 래퍼 클래스의 인스턴스에 저장된 값을 다시 기본 타입의 데이터로 꺼내는 과정을 언박싱(UnBoxing)
+   - 위의 과정을 자동으로 해주는것이 오토박싱 언박싱이다.
+      ```java
+      Integer num = new Integer(10); // 박싱
+      int a = num.intValue();        // 언박싱
+      
+      System.out.println("a: " + a);
+      
+      Character chr = new Character('M'); : 오토박싱
+      char ch = ch.charValue();           : 오토언박싱
+      
+      System.out.println("ch: " + ch);
+      ```
+   - 결과
+      ```java
+      a: 10
+      ch: M
+      ```
+### var(타입추론)
+
 ### Map이란?
   - hashMap과 hashTable의 차이점은?
   - entrySet과 keySet의 차이점은?
