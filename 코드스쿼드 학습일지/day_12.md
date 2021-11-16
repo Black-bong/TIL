@@ -78,8 +78,8 @@
       
       System.out.println("a: " + a);
       
-      Character chr = new Character('M'); : 오토박싱
-      char ch = ch.charValue();           : 오토언박싱
+      Character chr = new Character('M'); // 오토박싱
+      char ch = ch.charValue();           // 오토언박싱
       
       System.out.println("ch: " + ch);
       ```
