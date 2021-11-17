@@ -115,6 +115,37 @@
       class java.lang.Integer
       ```
    - v의 타입을 출력해본 결과 Integer로 나오는걸 알 수 있다.
+
 ### Map이란?
-  - hashMap과 hashTable의 차이점은?
+  - 데이터를 key와 value값을 쌍으로 저장하는 인터페이스
+  - 입력되는 값의 순서와 상관없이 저장되며, key값에 대한 중복을 허용하지 않는다.(value값은 중복 가능)
+  - put메소드를 사용해 값을 저장하며, 이미 저장되어 있는 key값과 같은 key값으로 value값을 저장하려하면, 기존의 key값에 value값만 변경되어 저장된다.
+
+### hashMap과 hashTable의 차이점은?
+  - hash란?
+    - hashing기법을 사용
+    - hashing이란?
+      - hash함수를 이용해서 hash table에 데이터를 저장하고, hash함수에 key값을 입력해서 알려주는 hash code(index)를 이용해 데이터를 읽어오는 것
+    - hashtable이란?
+      - 배열과 링크드리스트가 조합된 형태
+      - 배열의 장점: 접근성이 좋다
+      - 링크드리스트의 장점: 데이터의 변경에 유리하다. 
+  - hashMap이란?
+    - Map인터페이스를 구현하는 클래스중에 동기화가 되어있지 않은 클래스.
+   
+      > Note that this implementation is not synchronized.(javadoc ver.11)
+    - java 1.2 버전에 추가
+  - hashTable이란?
+    - Map인터페이스를 구현하는 클래스중에 동기화가 되어있는 클래스.
+   
+      > Unlike the new collection implementations, Hashtable is synchronized.(javadoc ver.11)
+    - java 1.0 버전에 추가
+  - synchronized(동기화)
+    - 멀티 쓰레드 프로세스에서는 다른 쓰레드의 작업에 영향 미칠 수 있음
+    - 진행중인 작업이 다른 쓰레드에게 간섭받지 않게 하려면 동기화가 필요하다.
+    - 여기까지만 알아보고 좀 더 자세한 내용은 따로 하나의 학습페이지를 만들어 정리해보자.
   - entrySet과 keySet의 차이점은?
+    - enrtySet이란?
+      - entry 즉 Map에서 사용되는 key와 value값을 entry라고 하며, entrySet은 그 값들을 전부 조회하는 기능을 가진 Map클래스의 메소드이다.
+    - keySet이란? 
+      - key의 값을 전부 조회하는 기능을 가진 Map클래스의 메소드이다.
