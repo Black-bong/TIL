@@ -273,3 +273,55 @@ public class ArrayListStreamTest {
     }
     ```
     - 구현부가 너무 길고 복잡할때는 BinaryOperator를 구현하여 사용할 수 있다.
+
+## 추상(abstract)
+
+### 추상클래스란?
+- 미완성 설계도, 미완성 메서드를 갖고 있는 클래스
+    ```java
+    // 추상클래스(미완성 클래스)
+    abstract class Player {
+    		abstract void play(int pos); // 추상메서드(몸통이 없는 미완성 메서드)
+    		abstract void stop();
+    }
+    ```
+    - 다른 클래스 작성에 도움을 주기 위한 것. 인스턴스 생성 불가
+- 상속을 통해 추상 메서드를 완성해야 인스턴스 생성 가능
+    ```java
+    class AudioPlayer extends Player {
+    		void play(int pos) { /* ... */ }
+    		void stop() { /* ... */ }
+    }
+    ```
+    - 객체 생성이 가능하다.
+### 추상메서드
+- 미완성 메서드, 구현부가 없는 메서드
+- 꼭 필요하지만 자손마다 다르게 구현될 것으로 예상되는 경우
+
+### 추상클래스 작성
+- 여러 클래스에 공통적으로 사용될 수 있는 추상클래스를 바로 작성하거나 기존 클래스의 공통 부분을 뽑아서 추상클래스를 만든다.
+- 추상화 ←→ 구체화(명확)
+- 추상화된 코드는 구체화된 코드보다 유연하다. 변경에 유리
+```java
+GregorianCalendar cal = new GregorianCalendar(); // 구체적
+Calendar cal = Calendar.getInstance(); // 추상적
+```
+
+```java
+public static Calendar getInstance(Locale aLocale) {
+		return createCalendar(TimeZone.getDefault(), aLocale);
+}
+private static Calendar createCalendar(TimeZone zone, Local aLocale) {
+		if (caltype != null) {
+				switch (caltype) {
+				case "buddhist"
+						cal = new BuddhistCalendar(zone, aLocale);
+						breaka
+				case "japanese"
+						cal = new JapaneseImperialCalendar(zone, aLocale);
+						break;
+				case "gregory"
+						cal = new GregorianCalendar(zone, aLocale);
+						break;
+```
+- caltype에 따른 다른 객체생성을 반환
