@@ -278,19 +278,19 @@ public class ArrayListStreamTest {
 
 ### 추상클래스란?
 - 미완성 설계도, 미완성 메서드를 갖고 있는 클래스
-    ```java
-    // 추상클래스(미완성 클래스)
-    abstract class Player {
-	abstract void play(int pos); // 추상메서드(몸통이 없는 미완성 메서드)
-	abstract void stop();
-    }
-    ```
+	```java
+	// 추상클래스(미완성 클래스)
+	abstract class Player {
+		abstract void play(int pos); // 추상메서드(몸통이 없는 미완성 메서드)
+		abstract void stop();
+	}
+	```
     - 다른 클래스 작성에 도움을 주기 위한 것. 인스턴스 생성 불가
 - 상속을 통해 추상 메서드를 완성해야 인스턴스 생성 가능
     ```java
     class AudioPlayer extends Player {
-	void play(int pos) { /* ... */ }
-	void stop() { /* ... */ }
+		void play(int pos) { /* ... */ }
+		void stop() { /* ... */ }
     }
     ```
     - 객체 생성이 가능하다.
@@ -372,23 +372,22 @@ private static Calendar createCalendar(TimeZone zone, Local aLocale) {
     
     ```java
     interface Fightable {
-	void move(int x, int y);
-	void attack(Fightable f); // attack()의 매개변수로는 Fightable 인터페이스를 구현한 클래스의 객채만 받겠다.
-    }
-    
-    class Fighter extends Unit implements Fightable {
-	public void move(int x, int y) { /* ... */ }
-	public void attack(Fightable f) { /* ... */ }
-    }
-    
+		void move(int x, int y);
+		void attack(Fightable f); // attack()의 매개변수로는 Fightable 인터페이스를 구현한 클래스의 객채만 받겠다.
+	}
+
+	class Fighter extends Unit implements Fightable {
+		public void move(int x, int y) { /* ... */ }
+		public void attack(Fightable f) { /* ... */ }
+	}
     Unit u = new Fighter();
     Fightable f = new Fighter(); // 이렇게도 사용가능하나, Fightable에 정의된 메소드만 사용 가능하다.
     ```
 - 인터페이스를 메서드의 리턴타입으로 지정할 수 있다.
     ```java
-    Fightable method() { // Fightable 인터페이스를 구현한 클래스의 인스턴스를 반환
-	...
-	Fighter f = new Fighter();
-	return f;
-    }
+    Fightable method(){ // Fightable 인터페이스를 구현한 클래스의 인스턴스를 반환
+        ...
+        Fighter f=new Fighter();
+        return f;
+	}
     ```
