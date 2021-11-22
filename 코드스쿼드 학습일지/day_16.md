@@ -1,7 +1,13 @@
 # 16일차 학습일지
+
 ## GUI 프로그래밍 학습하기
+
 ## 추가학습
 - super
+- 람다와 스트림
+- for-each, map, filter, reduce
+- stream foreach, enhanced foreach
+- 자바의 인터페이스
 
 ## Super
 > 남궁성님 자바의 정석을 참고하여 공부하고, 정리한 내용입니다.
