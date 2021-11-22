@@ -325,3 +325,70 @@ private static Calendar createCalendar(TimeZone zone, Local aLocale) {
 		break;
 ```
 - caltype에 따른 다른 객체생성을 반환
+
+## 인터페이스
+
+### 인터페이스란?
+- 추상 메서드의 집합
+- 구현된 것이 전혀 없는 설계도, 껍데기(모든 멤버가 public)
+
+### 인터페이스의 요소
+- 추상 메서드
+- 상수
+- 디폴트 메서드
+- 정적 메서드
+- private 메서드
+
+### 인터페이스의 상속
+- 인터페이스의 조상은 인터페이만 가능(Object가 최고 조상 아님)
+- 다중 상속이 가능
+
+### 인터페이스선언과 구현
+- 인터페이스 선언
+    ```java
+    public interface Calc {
+        double PI = 3.14;
+        int ERROR = -9999999;
+    
+        int add (int a, int b);
+        int sub (int a, int b);
+        int mul (int a, int b);
+        int div (int a, int b);
+    }
+    ```
+    - 인터페이스에서 선언한 변수는 컴파일 과정에서 상수로 변환된다.(PI, ERROR)
+    - 인터페이스에서 선언한 메서드는 컴파일 과정에서 추상 메서드로 변환된다.(add, sub, mul, div)
+    - 인터페이스는 구현 코드가 없기 때문에 타입 상속이라고도 한다.
+- 인터페이스 구현
+    - 인터페이스에 정의된 추상 메서드를 완성하는 것.
+    - 일부만 구현하는 경우, 클래스 앞에 abstract를 붙여야한다.
+
+### 인터페이스의 역활은?
+- 인터페이스는 클라이언트 프로그램에 어떤 메서드를 제공하는지 알려주는 명세 또는 약속
+- 클라이언트 프로그램은 실제 구현내용을 몰라도 인터페이스의 정의만 알면 그 객체를 사용할 수 있다.
+
+### 인터페이스를 이용한 다형성
+- 인터페이스 타입의 매개변수는 인터페이스를 구현한 클래스의 객체만 가능
+    
+    ```java
+    interface Fightable {
+	void move(int x, int y);
+	void attack(Fightable f); // attack()의 매개변수로는 Fightable 인터페이스를 구현한 클래스의 객채만 받겠다.
+    }
+    
+    class Fighter extends Unit implements Fightable {
+	public void move(int x, int y) { /* ... */ }
+	public void attack(Fightable f) { /* ... */ }
+    }
+    
+    Unit u = new Fighter();
+    Fightable f = new Fighter(); // 이렇게도 사용가능하나, Fightable에 정의된 메소드만 사용 가능하다.
+    ```
+- 인터페이스를 메서드의 리턴타입으로 지정할 수 있다.
+    ```java
+    Fightable method() { // Fightable 인터페이스를 구현한 클래스의 인스턴스를 반환
+	...
+	Fighter f = new Fighter();
+	return f;
+    }
+    ```
