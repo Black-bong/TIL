@@ -142,3 +142,52 @@
         }
     }
     ```
+## 람다식
+>패스트캠퍼스 JAVA 인강을 보고 정리한 내용입니다.
+
+### 람다식이란?
+- 자바에서 함수형 프로그래밍을 구현하는 방식
+- 클래스를 생성하지 않고 함수의 호출만으로 기능을 수행
+- 자바 8부터 지원되는 기능
+- 순수 함수를 구현하고 호출
+- 매개 변수만을 사용하도록 만든 함수로 외부 자료에 부수적인 영향(side effect)가 발생하지 않도록 함
+- 입력 받은 자료를 기반으로 수행되고 외부에 영향을 미치지 않으므로 병렬처리 등이 가능
+- 안정적인 확장성 있는 프로그래밍 방식
+
+### 람다식 문법
+- 매개 변수가 하나인 경우 괄호 생략가능(두 개인경우는 괄호를 생략할 수 없다.)
+    - str → {System.out.println(str);}
+- 중괄호 안의 구현부가 한 문장인 경우 중괄호 생략
+    - str → System.out.println(str);
+- 중괄호 안의 구현부가 한 문장이라도 return문은 중괄호를 생략할 수 없다.
+    - str → return str.length(); //오류 발생
+- 중괄호 안의 구현부가 반환문 하나라면 return과 중괄호를 모두 생략할 수 있다.
+    - (x, y) → x + y     //두 값을 더하여 반환
+    - str → str.length() //문자열 길이 반환
+```java
+interface PrintString {
+    void showString(String str);
+}
+
+public class TestLambda {
+    public static void main(String[] args) {
+
+        PrintString lambdaStr = System.out::println;
+        lambdaStr.showString("Test");
+
+        showMyString(lambdaStr);
+
+        PrintString test = returnString();
+        test.showString("Test3");
+    }
+
+    private static void showMyString(PrintString p) {
+        p.showString("Test2");
+    }
+
+    public static PrintString returnString() {
+        return s -> System.out.println(s + "!!!");
+    }
+}
+```
+- 함수의 구현부가 변수처럼 사용된다.
