@@ -238,7 +238,7 @@ public class ArrayListStreamTest {
     }
 }
 ```
-- <a href = https://github.com/Black-bong/CodeSquad_COCOA_JAVA/tree/master/week4/src/streamex></a>
+- <a href = https://github.com/Black-bong/CodeSquad_COCOA_JAVA/tree/master/week4/src/streamex>스트림예제코드</a>
 ### reduce() 연산
 - 정의된 연산이 아닌 프로그래머가 직접 지정하는 연산을 적용
 - 최종 연산으로 스트림의 요소를 소모하며 연산 수행
