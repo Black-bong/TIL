@@ -191,3 +191,84 @@ public class TestLambda {
 }
 ```
 - 함수의 구현부가 변수처럼 사용된다.
+
+## 스트림
+
+### 스트림이란?
+- 자료의 대상과 관계없이 동일한 연산을 수행할 수 있는 기능
+- 배열, 컬렉션에 동일한 연산이 수행되어 일관성 있는 처리 가능
+- 한번 생성하고 사용한 스트림은 재사용할 수 없다.
+- 스트림 연산은 기존 자료를 변경하지 않는다.
+- 중간 연산과 최종 연산으로 구분된다.
+- 최종 연산이 수행되어야 모든 연산이 적용되는 지연 연산이다.
+
+### 중간연산
+- 스트림의 구현부는 람다식을 사용한다.
+- filter(): 조건에 맞는 요소 추출
+- map(): 요소를 변환
+- sorted(): 요소들을 정렬해준다.
+- 이 외도 여러가지 중간연산이 있다.
+- 문자열의 길이가 5 이상인 요소만 출력하기
+    - sList.stream().filter(s → s.length() ≥ 5).forEach(s → System.out.println(s));
+- 고객 클래스에서 고객 이름만 가져오기
+    - customerList.stream().map(c → c.getName()).forEach(s → System.out.println(s));
+
+### 최종연산
+- 스트림의 자료를 소모 하면서 연산을 수행
+- 최종 연산 후에 스트림은 더 이상 다른 연산을 적용 할 수 없다.
+- forEach(): 요소를 하나씩 꺼내옴
+- count(): 요소의 개수
+- sum(): 요소의 합
+- 이 외도 여러가지 최종연산이 있다.
+```java
+public class ArrayListStreamTest {
+
+    public static void main(String[] args) {
+
+        List<String> stringList = new ArrayList<>();
+        stringList.add("신김박");
+        stringList.add("김신박");
+        stringList.add("박신김");
+
+        stringList.forEach(System.out::println); // 순서와 상관없이 값 출력
+        System.out.println("----------");
+        stringList.stream().sorted().forEach(System.out::println); // ASC로 정렬되어 값 출력
+        System.out.println("----------");
+        stringList.stream().map(s -> s.length()).forEach(System.out::println); // 문자열의 길이 출력
+    }
+}
+```
+### reduce() 연산
+- 정의된 연산이 아닌 프로그래머가 직접 지정하는 연산을 적용
+- 최종 연산으로 스트림의 요소를 소모하며 연산 수행
+- 배열의 모든 요소의 합을 구하는 reduce()연산
+    - Arrays.stream(arr).reduce(0, (a, b) → a + b));
+    - 0은 초기값, (a, b)는 전달되는 요소, ((a, b) → a + b)는 각 요소가 수행해야 할 기능
+- 두 번째 요소로 전달되는 람다식에 따라 다양한 기능을 수행
+- 문자열의 길이가 가장 긴 문자열 출력
+    ```java
+    class CompareString implements BinaryOperator<String> {
+        @Override
+        public String apply(String s1, String s2) {
+            if (s1.getBytes().length >= s2.getBytes().length)
+                return s1;
+            else return s2;
+        }
+    }
+    
+    public class ReduceTest {
+        public static void main(String[] args) {
+            String[] greetings = {"안녕하세요~~~~~", "hello", "Good morning", "반갑습니다."};
+    				 // 방법 1
+            System.out.println(Arrays.stream(greetings).reduce("", (s1, s2) -> {
+                if (s1.getBytes().length >= s2.getBytes().length)
+                    return s1;
+                else return s2;
+            }));
+            System.out.println("-------------");
+    				 // 방법 2
+            System.out.println(Arrays.stream(greetings).reduce(new CompareString()).get());
+        }
+    }
+    ```
+    - 구현부가 너무 길고 복잡할때는 BinaryOperator를 구현하여 사용할 수 있다.
