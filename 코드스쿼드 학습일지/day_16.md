@@ -260,15 +260,15 @@ public class ArrayListStreamTest {
     public class ReduceTest {
         public static void main(String[] args) {
             String[] greetings = {"안녕하세요~~~~~", "hello", "Good morning", "반갑습니다."};
-    				 // 방법 1
-            System.out.println(Arrays.stream(greetings).reduce("", (s1, s2) -> {
+	    // 방법 1
+            System.out.println(Arrays.stream(greetings).reduce("", (s1, s2) -> { 
                 if (s1.getBytes().length >= s2.getBytes().length)
                     return s1;
                 else return s2;
             }));
             System.out.println("-------------");
-    				 // 방법 2
-            System.out.println(Arrays.stream(greetings).reduce(new CompareString()).get());
+	    // 방법 2 
+            System.out.println(Arrays.stream(greetings).reduce(new CompareString()).get()); 
         }
     }
     ```
@@ -281,16 +281,16 @@ public class ArrayListStreamTest {
     ```java
     // 추상클래스(미완성 클래스)
     abstract class Player {
-    		abstract void play(int pos); // 추상메서드(몸통이 없는 미완성 메서드)
-    		abstract void stop();
+	abstract void play(int pos); // 추상메서드(몸통이 없는 미완성 메서드)
+	abstract void stop();
     }
     ```
     - 다른 클래스 작성에 도움을 주기 위한 것. 인스턴스 생성 불가
 - 상속을 통해 추상 메서드를 완성해야 인스턴스 생성 가능
     ```java
     class AudioPlayer extends Player {
-    		void play(int pos) { /* ... */ }
-    		void stop() { /* ... */ }
+	void play(int pos) { /* ... */ }
+	void stop() { /* ... */ }
     }
     ```
     - 객체 생성이 가능하다.
@@ -309,19 +309,19 @@ Calendar cal = Calendar.getInstance(); // 추상적
 
 ```java
 public static Calendar getInstance(Locale aLocale) {
-		return createCalendar(TimeZone.getDefault(), aLocale);
+	return createCalendar(TimeZone.getDefault(), aLocale);
 }
 private static Calendar createCalendar(TimeZone zone, Local aLocale) {
-		if (caltype != null) {
-				switch (caltype) {
-				case "buddhist"
-						cal = new BuddhistCalendar(zone, aLocale);
-						breaka
-				case "japanese"
-						cal = new JapaneseImperialCalendar(zone, aLocale);
-						break;
-				case "gregory"
-						cal = new GregorianCalendar(zone, aLocale);
-						break;
+	if (caltype != null) {
+	switch (caltype) {
+	case "buddhist"
+		cal = new BuddhistCalendar(zone, aLocale);
+		break;
+	case "japanese"
+		cal = new JapaneseImperialCalendar(zone, aLocale);
+		break;
+	case "gregory"
+		cal = new GregorianCalendar(zone, aLocale);
+		break;
 ```
 - caltype에 따른 다른 객체생성을 반환
