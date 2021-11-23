@@ -118,12 +118,12 @@
     | Collection | boolean removeIf(Predicate<E> filter) | 조건에 맞는 요소를 삭제 |
     | List | void replaceAll(UnaryOperator<E> operator) | 모든 요소를 변환하여 대체 |
     | Iterable | void forEach(Consumer<T> action) | 모든 요소에 작업 action을 수행 |
-    | Map | V compute(K key, BiFunction<K,V,V> f) | 지정된 키의 값에 작업 f를 수행 |
-    | Map | V computeifAbsent(K key, Finction<k,V> f) | 키가 없으면, 작업 f 수행 후 추가 |
-    | Map | V computeIfPersent(K key, BiFunction<K,V,V> f) | 지정된 키가 있을때, 작업 f 수행 |
-    | Map | V merge(K key, V value, BiFunction<V,V,V> f) | 모든 요소에 병합작업 f를 수행 |
-    | Map | void forEach(BiConsumer<K,V> action) | 모든 요소에 작업 action을 수행 |
-    | Map | void replaceAll(BiFunction<K,V,V> f) | 모든 요소에 치환작업 f를 수행 |
+    | Map | V compute(K key, BiFunction<K ,V ,V> f) | 지정된 키의 값에 작업 f를 수행 |
+    | Map | V computeifAbsent(K key, Finction<k, V> f) | 키가 없으면, 작업 f 수행 후 추가 |
+    | Map | V computeIfPersent(K key, BiFunction<K, V, V> f) | 지정된 키가 있을때, 작업 f 수행 |
+    | Map | V merge(K key, V value, BiFunction<V, V, V> f) | 모든 요소에 병합작업 f를 수행 |
+    | Map | void forEach(BiConsumer<K, V> action) | 모든 요소에 작업 action을 수행 |
+    | Map | void replaceAll(BiFunction<K, V, V> f) | 모든 요소에 치환작업 f를 수행 |
     - 사용 예
     ```java
     list.forEach(i -> System.out.println(i + ","));
