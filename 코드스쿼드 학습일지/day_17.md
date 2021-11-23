@@ -156,7 +156,7 @@
 - static메서드 참조
     ```java
     Integer method(String s) {
-    	return Integer.parseInt(s);
+        return Integer.parseInt(s);
     }
     // 위에 코드 축약
     Function<String, Integer> f = Integer::parseInt; // 메서드 참조
