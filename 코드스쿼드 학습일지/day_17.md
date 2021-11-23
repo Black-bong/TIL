@@ -111,3 +111,23 @@
     // 위에 코드를 이런식으로 축약 가능
     boolean result = Predicate.isEqual(str1).test(str2);
     ```
+### 컬렉션 프레임웍과 함수형 인터페이스
+- 함수형 인터페이스를 사용하는 컬렉션 프레임웍의 메서드
+    | 함수형 인터페이스 | 메서드 | 설명 |
+    | --- | --- | --- |
+    | Collection | boolean removeIf(Predicate<E> filter) | 조건에 맞는 요소를 삭제 |
+    | List | void replaceAll(UnaryOperator<E> operator) | 모든 요소를 변환하여 대체 |
+    | Iterable | void forEach(Consumer<T> action) | 모든 요소에 작업 action을 수행 |
+    | Map | V compute(K key, BiFunction<K,V,V> f) | 지정된 키의 값에 작업 f를 수행 |
+    | Map | V computeifAbsent(K key, Finction<k,V> f) | 키가 없으면, 작업 f 수행 후 추가 |
+    | Map | V computeIfPersent(K key, BiFunction<K,V,V> f) | 지정된 키가 있을때, 작업 f 수행 |
+    | Map | V merge(K key, V value, BiFunction<V,V,V> f) | 모든 요소에 병합작업 f를 수행 |
+    | Map | void forEach(BiConsumer<K,V> action) | 모든 요소에 작업 action을 수행 |
+    | Map | void replaceAll(BiFunction<K,V,V> f) | 모든 요소에 치환작업 f를 수행 |
+    - 사용 예
+    ```java
+    list.forEach(i -> System.out.println(i + ","));
+    list.removeIf(x -> x % 2 == 0 || x % 3 == 0);
+    list.replaceAll(i -> i * 10);
+    map.forEach((k, v) -> System.out.println("k:" + k + "," + "v:" + v);
+    ```
