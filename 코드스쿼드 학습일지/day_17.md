@@ -132,3 +132,13 @@
     list.replaceAll(i -> i * 10);
     map.forEach((k, v) -> System.out.println("k:" + k + "," + "v:" + v);
     ```
+    
+## 논리곱, 논리합
+- 문제 풀다 헤깔림 다시 정리
+    
+    | A | B | A and B | A or B | !A | A ^ B(XOR) |
+    | --- | --- | --- | --- | --- | --- |
+    | TRUE | TRUE | TRUE | TRUE | FALSE | FALSE |
+    | TRUE | FALSE | FALSE | TRUE | FALSE | TRUE |
+    | FALSE | TRUE | FALSE | TRUE | TRUE | TRUE |
+    | FALSE | FALSE | FALSE | FALSE | TURE | FALSE |
