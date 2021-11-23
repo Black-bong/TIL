@@ -4,6 +4,7 @@
 - 인터페이스 추가 학습
 - 람다 심화
 - 스트림 심화
+    - 내일 보충..
 
 ## 인터페이스 추가 학습
 > 남궁성님의 자바의 정석을 보고 학습 및 정리한 내용입니다.
@@ -142,3 +143,34 @@
     | TRUE | FALSE | FALSE | TRUE | FALSE | TRUE |
     | FALSE | TRUE | FALSE | TRUE | TRUE | TRUE |
     | FALSE | FALSE | FALSE | FALSE | TURE | FALSE |
+
+## 메서드, 생성자참조
+    
+### 메서드 참조(클래스이름::메서드이름)
+- 하나의 메서드만 호출하는 람다식은 메서드 참조로 더 간단히 할 수 있다.
+    | 종류 | 람다 | 메서드 참조 |
+    | --- | --- | --- |
+    | static 메서드 참조 | (x) → ClassName.method(x) | ClassName::method |
+    | 인스턴스메서드 참조 | (obj, x) → obj.method(x) | ClassName::method |
+    | 특정 객체 인스턴스메서드 참조 | (x) → obj.method(x) | obj::method |
+- static메서드 참조
+    ```java
+    Integer method(String s) {
+    	return Integer.parseInt(s);
+    }
+    // 위에 코드 축약
+    Function<String, Integer> f = Integer::parseInt; // 메서드 참조
+    ```
+### 생성자의 메서드 참조
+- 생성자와 메서드 참조
+    ```java
+    Supplier<MyClass> s = () -> new MyClass();
+    // 위에 코드 축약
+    Supplier<MyClass> s = MyClass::new;
+    // 매개변수가 있는 객체 생성
+    Function<Integer, MyClass> s = MyClass::new;
+    ```
+- 배열과 메서드 참조
+    ```java
+    Function<Integer, int[]> f2 = int[]::new;
+    ```
