@@ -81,7 +81,7 @@
 - 매개변수가 2개인 함수형 인터페이스
     | 함수형 인터페이스 | 메서드 | 설명 |
     | --- | --- | --- |
-    | BiConsumer<T, U> | T, U → void accept(T t, U u) | 구개의 매개변수만 있고, 반환값이 없다 |
+    | BiConsumer<T, U> | T, U → void accept(T t, U u) | 두 개의 매개변수만 있고, 반환값이 없다 |
     | BiPredicate<T, U> | T, U → boolean test(T t, U u) → B | 조건식을 표현하는데 사용됨 매개변수는 둘, 반환값은 boolean |
     | BiFunction<T, U, R> | T, U → R apply(T t, U u) → R | 두 개의 매개변수를 받아서 하나의 결과를 반환 |
 - 매개변수의 타입과 반환타입이 일치하는 함수형 인터페이스
