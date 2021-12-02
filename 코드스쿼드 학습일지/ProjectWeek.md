@@ -79,8 +79,7 @@ function main() {
 5. [CubeRepository클래스](#CubeRepository클래스)
 6. [RubiksCube클래스](#RubiksCube클래스)
 7. [CubeTimer클래스](#CubeTimer클래스)
-8. [Cube클래스](#Cube클래스)
-9. [RubiksCubeController클래스](#RubiksCubeController클래스)
+8. [RubiksCubeController클래스](#RubiksCubeController클래스)
 
 ### PrintScreen클래스
 - 화면 출력을 담당
@@ -292,7 +291,6 @@ public void leftClockWise() {
 
 ### CubeTimer클래스
 - 루빅스 큐브를 플레이한 시간을 측정하는 역할
-- TimerTask를 활용하여 메인 스레드와는 
 
 |메소드명|기능|
 |------|----|
@@ -300,3 +298,38 @@ public void leftClockWise() {
 |[playTime](#playTime메소드)|playTime을 측정하는 기능|
 |[stopTimer](#stopTimer메소드)|Timer를 멈추는 기능|
 
+### timeCheck메소드
+```java
+public void timeCheck() {
+    Timer timer = new Timer();
+    TimerTask timerTask = new TimerTask() {
+        @Override
+        public void run() {
+            playTime(timer);
+        }
+    };
+    timer.schedule(timerTask, 0, 1000);
+}
+```
+- TimerTask를 활용하여 메인 스레드와는 별개로 작동되는 스레드를 만들어 시간 측정
+- 1초마다 playTime메소드를 실행
+### playTime메소드
+```java
+private void playTime(Timer timer) {
+    if (timerFlag) {
+        time++;
+    }
+    if (!timerFlag) {
+        timer.cancel();
+    }
+}
+```
+- timerFlag가 true인 동안 1초마다 time을 1씩 증가 시켜 시간 측정
+### stopTimer메소드
+```java
+public int stopTimer() {
+    timerFlag = false;
+    return time;
+}
+```
+- timer를 멈추고 측정된 time값을 반환해준다.
