@@ -74,12 +74,13 @@ function main() {
 
 ## 목차
 1. [PrintScreen클래스](#PrintScreen클래스)
-3. [Input클래스](#Input클래스)
-4. [Commends클래스](#Commends클래스)
-5. [CubeRepository클래스](#CubeRepository클래스)
-6. [RubiksCube클래스](#RubiksCube클래스)
-7. [CubeTimer클래스](#CubeTimer클래스)
-8. [RubiksCubeController클래스](#RubiksCubeController클래스)
+2. [Input클래스](#Input클래스)
+3. [Commends클래스](#Commends클래스)
+4. [CubeRepository클래스](#CubeRepository클래스)
+5. [RubiksCube클래스](#RubiksCube클래스)
+6. [CubeTimer클래스](#CubeTimer클래스)
+7. [RubiksCubeController클래스](#RubiksCubeController클래스)
+8. <a href=https://github.com/Black-bong/CodeSquad_COCOA_JAVA/tree/master/week5/src/testpreparation/step3>전체코드</a>
 
 ### PrintScreen클래스
 - 화면 출력을 담당
