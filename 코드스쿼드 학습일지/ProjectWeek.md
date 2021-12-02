@@ -333,3 +333,64 @@ public int stopTimer() {
 }
 ```
 - timer를 멈추고 측정된 time값을 반환해준다.
+
+### RubiksCubeController클래스
+- 입력 받은 명령어를 처리하여 RubiksCube클래스에 있는 큐브를 움직이는 메소드를 호출하는 역할
+
+|메소드명|기능|
+|------|----|
+|[saveCommend](#saveCommend메소드)|특정 값이 입력될 때 까지 명령을 계속 받고 명령어 리스트에 저장하는 기능|
+|[readCommend](#readCommend메소드)|저장된 명령어를 읽는 기능|
+|[createCommendController](#createCommendController메소드)|명령에 따른 기능을 호출할 수 있도록 컨트롤러를 생성하는 기능|
+
+### saveCommend메소드
+```java
+private void saveCommend() throws IOException {
+    Input input = new Input();
+    List<String> commandList = new LinkedList<>();
+    Map<Integer, Runnable> controllerList = new HashMap<>();
+    createCommendController(controllerList);
+    while (inputFlag) {
+        clearCommandList(commandList);
+        inputBar();
+        input.inputString(commandList);
+        readCommend(commandList, controllerList);
+    }
+}
+```
+- 명령어 처리에 필요한 객체를 생성하고, 명령어를 입력받아 저장한다.
+
+### readCommend메소드
+```java
+private void readCommend(List<String> commandList, Map<Integer, Runnable> controllerList) {
+    for (String s : commandList) {
+        commandCount++;
+        if (s.equals("Q")) {
+            inputFlag = false;
+            endScreen(commandCount, cubeTimer.stopTimer());
+            break;
+        }
+        controllerList.get(Commends.transferCommendID(s)).run();
+    }
+}
+```
+- 저장된 명령어를 읽어 명령어 ID를 반환받아 해당 명령을 수행하는 메소드를 호출해준다.
+
+### createCommendController메소드
+```java
+private void createCommendController(Map<Integer, Runnable> controllerList) {
+    controllerList.put(0, () -> upInverted()); // U'
+    controllerList.put(1, () -> upClockWise()); // U
+    controllerList.put(2, () -> rightInverted()); // R'
+    controllerList.put(3, () -> rightClockWise()); // R
+    controllerList.put(4, () -> leftInverted()); // L'
+    controllerList.put(5, () -> leftClockWise()); // L
+    controllerList.put(6, () -> downInverted()); // D
+    controllerList.put(7, () -> downClockWise()); // D'
+    controllerList.put(8, () -> frontClockWise()); // F
+    controllerList.put(9, () -> frontInverted()); // F'
+    controllerList.put(10, () -> bottomInverted()); // B'
+    controllerList.put(11, () -> bottomClockWise()); // B
+}
+```
+- if~else 또는 switch구문의 사용을 피하기위해 Runnable을 사용
