@@ -104,7 +104,7 @@ public void endScreen(int count, int time) {
 - 루빅스 큐브 종료 시 조작갯수, 경과시간, 종료안내문 출력
 
 ### Input클래스
-- 사용자로부터 값을 입력 받는 역활
+- 사용자로부터 값을 입력 받는 역할
 
 |메소드명|기능|
 |------|----|
@@ -253,3 +253,50 @@ public String[][] inverted(String[][] cube) {
 ```
 - 반 시계뱡향으로 돌리는 기능을 수행한다.
 - 시계방향으로 3번돌리면 반 시계방향으로 돌린것과 같기때문에 그걸 활용하여 반 시계반향으로 돌린다.
+
+### RubiksCube클래스
+- 큐브를 생성하고, 입력받은 명령어에 따른 행동을 저장소에서 꺼내와 실행하는 역할
+
+|메소드명|기능|
+|------|----|
+|[createCube](#createCube메소드)|큐브 객체를 받아 저장하는 기능|
+|[leftClockWise](#leftClockWise메소드)|L명령어에 따른 행동을 저장소에서 꺼내와 실행하는 기능|
+
+### createCube메소드
+```java
+protected void createCube() {
+    Cube top = new Cube("⬜", 3, 3);
+    cubeRepository.save(top);
+    Cube left = new Cube("\uD83D\uDFE7", 3, 3);
+    cubeRepository.save(left);
+    Cube front = new Cube("\uD83D\uDFE9", 3, 3);
+    cubeRepository.save(front);
+    Cube right = new Cube("\uD83D\uDFE5", 3, 3);
+    cubeRepository.save(right);
+    Cube back = new Cube("\uD83D\uDFE6", 3, 3);
+    cubeRepository.save(back);
+    Cube bottom = new Cube("\uD83D\uDFE8", 3, 3);
+    cubeRepository.save(bottom);
+}
+```
+- 큐브를 생성자를 통해 생성하고, 저장한다.
+### leftClockWise메소드
+```java
+public void leftClockWise() {
+    System.out.println("L");
+    cubeRepository.left();
+    printCube();
+}
+```
+- 입력된 명령에 따라 기능을 수행한다.
+
+### CubeTimer클래스
+- 루빅스 큐브를 플레이한 시간을 측정하는 역할
+- TimerTask를 활용하여 메인 스레드와는 
+
+|메소드명|기능|
+|------|----|
+|[timeCheck](#timeCheck메소드)|타이머를 생성하는 기능|
+|[playTime](#playTime메소드)|playTime을 측정하는 기능|
+|[stopTimer](#stopTimer메소드)|Timer를 멈추는 기능|
+
