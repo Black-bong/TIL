@@ -40,7 +40,7 @@
     
     ```java
     if(Optional.ofNullable(str).isPresent()) { // if(str != null)
-    	System.out.println(str)
+		System.out.println(str)
     }
     // 위에 코드 간결화
     Optional.ofNullable(str).ifPresent(System.out::println); // null이 아닐때만 작업을 수행
