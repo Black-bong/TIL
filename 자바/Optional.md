@@ -4,8 +4,8 @@
     
     ```java
     public final class Optional<T> {
-    		private final T value; // T 타입의 참조변수, value에는 모든종류의 객체 저장 가능!(null도 저장가능)
-    			...
+        private final T value; // T 타입의 참조변수, value에는 모든종류의 객체 저장 가능!(null도 저장가능)
+        ...
     }
     ```
     
