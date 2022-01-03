@@ -38,6 +38,8 @@
 - 코드에 없는 정보를 설명할 때 쓰는 주석
 - 나쁜 주석: add메서드에 덧셈하는 기능 등등 코드로 알 수 있는 걸 주석으로 써 놓은것
 
+------------------
+
 ## 논리회로
 
 ### 논리 게이트
@@ -77,10 +79,15 @@
     | 0 | 1 | 0 | 1 |
     | 1 | 0 | 0 | 1 |
     | 1 | 1 | 1 | 0 |
-- A, B: 입력
-- C, S: 출력
-- S(sum): XOR 진리표와 동일
-- C(carry): AND 진리표와 동일
+
+  <img src= "https://user-images.githubusercontent.com/78953393/147926603-eaf32f63-d06c-4e5c-b7d0-03495de11e32.png" height="60%" width="40%">
+
+  - A, B: 입력
+  - C, S: 출력
+  - S(sum): XOR 진리표와 동일
+  - C(carry): AND 진리표와 동일
+
+
 
 ### 전가사기란?
 - 2개의 비트와 1개의 캐리(입력 3개)를 계산할 수 있는 가산기
@@ -96,10 +103,13 @@
     | 1 | 0 | 1 | 1 | 0 |
     | 1 | 1 | 0 | 1 | 0 |
     | 1 | 1 | 1 | 1 | 1 |
-- X, Y, Z: 입력
-- C, S: 출력
-- S(sum): (X XOR Y) XOR Z
-- C(carry): (X XOR Y)Z + XY
+
+  <img src= "https://user-images.githubusercontent.com/78953393/147926608-29c34a63-c01a-447c-a8a3-d45b1fe07474.png" height="60%" width="40%">
+
+  - X, Y, Z: 입력
+  - C, S: 출력
+  - S(sum): (X XOR Y) XOR Z
+  - C(carry): (X XOR Y)Z + XY
 
 ## 진법변환
 
