@@ -61,6 +61,8 @@ W
 ^
 .코쿼 마스터즈 학습일지/week1/Day3.md,e/9/e9be24be094ea4c7a85f51835a421b598c0df42f
 ^
-.코쿼 마스터즈 학습일지/week1/Day5.md,8/8/88605b441a99796dca81dc79b9f8c92fbcd18b38
-^
 .코쿼 마스터즈 학습일지/week1/Day4.md,f/8/f80639ad5c6430a2c8d7724f2670796cba228601
+w
+G자바/자바로 구현하고 배우는 자료구조/시간복잡도.md,d/9/d998eb0665906f19a8081a9e78c1faf31cbf949d
+^
+.자바/컬렉션 프레임워크/LinkedList.md,e/8/e89860e77ce5d5917df26761e2f4ee6d50c32e69
