@@ -147,6 +147,6 @@
 
 ----
 # Reference
-<a href = "https://www.youtube.com/watch?v=vZRmCbl871I&t=254s">[10분 테코톡] 👌던의 JVM의 Garbage Collector</a>\
-<a href = "https://d2.naver.com/helloworld/1329">Java Garbage Collection</a>
-<a href = "https://www.inflearn.com/course/the-java-code-manipulation/dashboard">더 자바, 코드를 조작하는 다양한 방법</a>
+- <a href = "https://www.youtube.com/watch?v=vZRmCbl871I&t=254s">[10분 테코톡] 👌던의 JVM의 Garbage Collector</a>
+- <a href = "https://d2.naver.com/helloworld/1329">Java Garbage Collection</a>
+- <a href = "https://www.inflearn.com/course/the-java-code-manipulation/dashboard">더 자바, 코드를 조작하는 다양한 방법</a>
