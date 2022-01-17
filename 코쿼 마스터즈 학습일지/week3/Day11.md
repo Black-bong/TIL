@@ -102,6 +102,9 @@
 - 1번 2번 과정이 Mark, 3번 과정이 Sweep
 
 ### GC는 언제 일어날까?
+
+![힙영역](https://user-images.githubusercontent.com/78953393/149742614-7a9bf05e-df97-4444-92c2-be8e1fbc7b20.png)
+
 - 힙 영역 안의 세부 영역
   - New Generation
     - Eden
