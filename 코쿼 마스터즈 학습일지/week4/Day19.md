@@ -3,7 +3,7 @@
 ## Block, Non-Block
 - 제어의 관점
 
-### Blocking?
+### Blocking이란?
 - 자신의 작업을 진행하다가 다른 주체의 작업이 시작되면 다른 작업이 끝날 때까지 기다렸다가 자신의 작업을 시작하는것
 
 ### Non-Blocking이란?
@@ -74,11 +74,6 @@ public class BlockingSync {
 - 다른 주체의 작업이 종료되면, 그 결과물을 가지고 자신의 작업이 종료되면 그때 처리
 - Javascript에서 API요청 후, 다른 작업을 하다가 콜백을 통해서 추가적인 작업을 처리할때 사용한다고 한다.
   - 사실 Javascript는 사용해 본적이 없어. 어떤 상황인지 잘 이해가 되지 않는다. 다른 언어에서 사용하는 예가 있는지 찾아봐야겠다.
-
-
-## CompletableFuter
-
-------
 
 # Reference
 [[10분 테코톡] 🐰 멍토의 Blocking vs Non-Blocking, Sync vs Async](https://www.youtube.com/watch?v=oEIoqGd-Sns)
