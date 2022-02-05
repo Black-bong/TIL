@@ -126,8 +126,6 @@ _
 /코쿼 마스터즈 학습일지/week4/Day17.md,5/c/5c4b975dfacf5ed68295514202bac9553e60b01b
 _
 /코쿼 마스터즈 학습일지/week4/Day18.md,c/1/c17accbd29eebfdf376db69490b10b05709b2e87
-_
-/코쿼 마스터즈 학습일지/week4/Day19.md,d/7/d7c447c92c624e0702a9b8d7124b089d7e803d8c
 O
 자바/스레드/ex/Ex13_5.java,2/8/2814f08231e58e1166a8844b6e2ce547be278268
 O
@@ -144,3 +142,15 @@ O
 자바/스레드/ex/Ex13_2.java,b/1/b17b3164dfeb3a63eda4a195aab30ba4f86e631b
 O
 자바/스레드/ex/Ex13_7.java,b/d/bd619e3adc7261892870094d7f42bab315bb9fc0
+O
+자바/스레드/ex/Ex13_8.java,1/1/11baceca7104e4bbf51976d9d4b772b068b2efbd
+P
+ 자바/스레드/ex/Ex13_14.java,3/1/314c84592e7f70f7a51886dff0da13e4514cc9d9
+P
+ 자바/스레드/ex/Ex13_12.java,4/4/445844c31f2e0baa0472fd3675371d75cfd9c112
+O
+자바/스레드/ex/Ex13_9.java,7/6/7653fc88db47c0cf31af454d3f06ecf4ed32e247
+P
+ 자바/스레드/ex/Ex13_10.java,2/e/2e18a6e6309966a15cc132168e8c75734e7e9ab7
+_
+/코쿼 마스터즈 학습일지/week4/Day19.md,d/7/d7c447c92c624e0702a9b8d7124b089d7e803d8c
