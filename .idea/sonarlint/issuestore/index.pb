@@ -1,6 +1,4 @@
 
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 V
 &알고리즘/그리디 알고리즘.md,9/0/9095d65705599c61a859f70de8d124766b075075
 ^
@@ -167,9 +165,6 @@ _
 /코쿼 마스터즈 학습일지/week6/Day26.md,3/7/378bc69913da6e72f373a67ab0596c1caa6900ea
 _
 /코쿼 마스터즈 학습일지/week6/Day27.md,a/0/a0e46a9db1984e955056c84dc5c5203a00243392
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 K
 자바/제네릭/generic.md,d/a/da19724453ccb420d0ff962d685623cb7fd040af
 L
@@ -208,3 +203,8 @@ W
 '자바/제네릭/ex/GenericStackEx.java,d/c/dca5a02aa4cfddb90717f84c57fc74889d1d3cbc
 L
 JPA/변경감지와병합.md,a/c/ac72dc557695789807c32e44da0a92aa7601fa93
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
